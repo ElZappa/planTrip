@@ -1,25 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import NavbarComponent from "./components/navbar/NavbarComponent";
+import { Box, CssBaseline, Grid } from "@mui/material";
+import ItemCard from "./components/cardTrip/itemCard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <NavbarComponent />
+        <Grid
+          container
+          spacing={2}
+          mt={7}
+          ml={0}
+          alignItems={"center"}
+          justifyContent={"center"}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          {/* <Grid> //Activar spinner de carga cuando se llame al servior
+            <CircularProgress />
+          </Grid> */}
+          <Grid item xs={12} sm={6} md={3} xl={2}>
+            <ItemCard />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3} xl={2}>
+            <ItemCard />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3} xl={2}>
+            <ItemCard />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3} xl={2}>
+            <ItemCard />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3} xl={2}>
+            <ItemCard />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3} xl={2}>
+            <ItemCard />
+          </Grid>
+        </Grid>
+      </Box>
+    </>
   );
 }
 
