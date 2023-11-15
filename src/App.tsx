@@ -1,48 +1,20 @@
-import React from "react";
-import "./App.css";
+// import React from "react";
+// import "./App.css";
 import NavbarComponent from "./components/navbar/NavbarComponent";
-import { Box, CssBaseline, Grid } from "@mui/material";
-import ItemCard from "./components/cardTrip/itemCard";
+// import { Box, CssBaseline, Grid } from "@mui/material";
+// import ItemCard from "./components/cardTrip/itemCard";
+import { Route, Routes } from "react-router-dom";
+import ItemCardList from "./components/cardTrip/TravelListComponent";
 
-function App() {
+const App: React.FC<{}> = () => {
   return (
     <>
-      <Box sx={{ display: "flex" }}>
-        <CssBaseline />
-        <NavbarComponent />
-        <Grid
-          container
-          spacing={2}
-          mt={7}
-          ml={0}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
-          {/* <Grid> //Activar spinner de carga cuando se llame al servior
-            <CircularProgress />
-          </Grid> */}
-          <Grid item xs={12} sm={6} md={3} xl={2}>
-            <ItemCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} xl={2}>
-            <ItemCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} xl={2}>
-            <ItemCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} xl={2}>
-            <ItemCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} xl={2}>
-            <ItemCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} xl={2}>
-            <ItemCard />
-          </Grid>
-        </Grid>
-      </Box>
+      <NavbarComponent />
+      <Routes>
+        <Route path="/" element={<ItemCardList />} />
+      </Routes>
     </>
   );
-}
+};
 
 export default App;
